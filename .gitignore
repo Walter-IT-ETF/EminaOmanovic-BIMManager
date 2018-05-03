@@ -1,0 +1,12 @@
+.vs
+.vscode/*
+.idea/
+
+BIMManager.Data/bin
+BIMManager.Data/obj
+
+BIMManager.Models/bin
+BIMManager.Models/obj
+
+BIMManager.API/bin
+BIMManager.API/obj

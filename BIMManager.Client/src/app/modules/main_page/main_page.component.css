@@ -1,0 +1,27 @@
+#listOfProjects {
+    font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+    border-collapse: collapse;
+    width: 80%;
+    margin: auto;
+}
+
+#listOfProjects td, #listOfProjects th {
+    border: 1px solid #ddd;
+    padding: 8px;
+}
+
+#listOfProjects tr:nth-child(even){background-color: #f2f2f2;}
+
+#listOfProjects tr:hover {background-color: #ddd;}
+
+#listOfProjects th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    background-color: #337ab7;
+    color: white;
+}
+h3{
+    color: #337ab7;
+    text-align: center;
+}

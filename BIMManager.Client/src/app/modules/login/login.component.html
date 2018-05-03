@@ -1,0 +1,22 @@
+<div class="auth-wrapper">
+  <form autocomplete="off" [formGroup]="loginForm" >
+    <div class="text-center">
+      <img src="assets/images/bim-logo.png" />
+    </div>
+    <div class="form-group">
+      <label>Email:</label>
+      <input type="email" class="form-control" name="email" formControlName="email">
+      <control-messages [control]="loginForm.controls.email"></control-messages>      
+    </div>
+    <div class="form-group">
+      <label>Password:</label>
+      <input type="password" name="password" class="form-control" autocomplete="new-password" formControlName="password">
+      <control-messages [control]="loginForm.controls.password"></control-messages>
+    </div>
+    <div style='color:red' *ngIf="errorMessage">{{errorMessage}}</div>
+    <a [routerLink]="['/register']" class="pull-left">Register</a>
+    <button class="btn btn-primary pull-right" type="submit" (click)="login(loginForm.value)"  >
+      <i class="fa fa-login"></i> Log in
+    </button>
+  </form>
+</div>

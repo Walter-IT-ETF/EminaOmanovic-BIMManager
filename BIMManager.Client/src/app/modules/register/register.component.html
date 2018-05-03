@@ -1,0 +1,32 @@
+<div class="auth-wrapper">
+  <form autocomplete="off" [formGroup]="registerForm">
+     <div class="text-center">
+        <img src="assets/images/bim-logo.png" />
+     </div>
+     <div class="form-group">
+        <label>Email:</label>    
+        <input type="email" class="form-control" name="email" formControlName="email">
+        <control-messages [control]="registerForm.controls.email"></control-messages>
+        <div style='color:red' *ngIf="duplicateEmail">{{errorMessageDuplicateEmail}}</div>
+     </div>
+  <form autocomplete="off" [formGroup]="registerForm.controls['passwords']">
+     <div class="form-group">
+        <label>Password:</label>
+        <input type="password" name="password" autocomplete="new-password" class="form-control" autocomplete="new-password" formControlName="password">
+        <control-messages [control]="registerForm.controls['passwords'].controls.password"></control-messages>
+     </div>
+     <div class="form-group">
+        <label>Confirm password :</label>
+        <input type="password" name="confirmPassword" class="form-control" autocomplete="new-password" formControlName="confirmPassword">
+        <control-messages [control]="registerForm.controls['passwords'].controls.confirmPassword"></control-messages>
+        <div style='color:red' *ngIf="registerForm.get(['passwords','password']).value != registerForm.get(['passwords','confirmPassword']).value && registerForm.get(['passwords','confirmPassword']).value != null">
+            Provided passwords must match.
+        </div>
+     </div>
+  </form>
+  <a [routerLink]="['/login']" class="pull-left">Log in</a>
+  <button class="btn btn-primary pull-right" type="submit" (click)="register(registerForm.value)" >
+  <i class="fa fa-register"></i> Register
+  </button>
+  </form>
+</div>
